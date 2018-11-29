@@ -40,4 +40,4 @@ URL: https://erply-backend-test.herokuapp.com/api/v1/products/1 (updates the pro
 delete
 URL: https://erply-backend-test.herokuapp.com/api/v1/products/1 (deletes the product with id 1)
 
-To see the result just go https://erply-backend-test.herokuapp.com/api/v1/products or watch how data is getting automatically displayed on the client app located in https://erply-frontend-test.000webhostapp.com/shop.html#home
+To see the result just go https://erply-backend-test.herokuapp.com/api/v1/products
