@@ -16,3 +16,14 @@ mvn spring-boot:run
 ## Client-side web application:
 
 Client-side web app is located in https://erply-frontend-test.000webhostapp.com/shop.html#home
+
+Try to post data via POSTMAN
+EG.
+
+```json
+{
+	"name":"Puldiga juhitav droon",
+	"price": 15.5
+}
+```
+
