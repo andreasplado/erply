@@ -13,9 +13,7 @@ mvn spring-boot:run
 ```
 
 
-## Client-side web application:
-
-Client-side web app is located in https://erply-frontend-test.000webhostapp.com/shop.html#home
+## Testing an application:
 
 Try via POSTMAN or any other RESTful app tester
 
