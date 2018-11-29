@@ -1,0 +1,9 @@
+ee\erply\dao\entity\ProductEntity.class
+ee\erply\dao\ProductDao.class
+ee\erply\utils\WebConfig.class
+ee\erply\controller\ProductController.class
+ee\erply\TestApplication.class
+ee\erply\service\ProductService.class
+ee\erply\dto\ProductDTO.class
+ee\erply\WebConfiguration.class
+ee\erply\controller\RedirectUnknownUrls.class
