@@ -69,12 +69,11 @@ public class ProductController extends WebMvcConfigurerAdapter {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ProductEntity> removeProduct(@PathVariable("id") Integer id) {
-
         ProductEntity productFound = productService.findById(id);
+
         if (productFound == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
         productService.deleteProduct(productFound);
 
         return new ResponseEntity<>(HttpStatus.OK);

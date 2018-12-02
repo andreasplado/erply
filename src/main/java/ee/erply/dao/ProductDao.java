@@ -18,7 +18,7 @@ public class ProductDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public ProductEntity create(ProductEntity productEntity) {
+    public ProductEntity addProduct(ProductEntity productEntity) {
        entityManager.persist(productEntity);
        return productEntity;
     }
@@ -53,14 +53,4 @@ public class ProductDao {
             entityManager.remove(m);
         }
     }
-
-    public List<ProductEntity> searchVisitByDentistName(String dentistName) {
-        String selectQuery = "SELECT e FROM ProductEntity e WHERE dentistName='" + dentistName +"'";
-         return entityManager.createQuery(selectQuery).getResultList();
-    }
-//    public List<ProductEntity> getAllProducts() {
-//        String selectQuery = "SELECT DISTINCT dentistName FROM ProductEntity ORDER BY dentistName";
-//        List<ProductEntity> list = entityManager.createQuery(selectQuery).getResultList();
-//        return entityManager.createQuery(selectQuery).getResultList();
-//    }
 }

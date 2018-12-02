@@ -17,7 +17,7 @@ public class ProductService {
     private ProductDao productDao;
 
     public ProductEntity addProduct(ProductEntity productEntity) {
-        return productDao.create(productEntity);
+        return productDao.addProduct(productEntity);
     }
 
     public ProductEntity viewProduct(int id){
@@ -40,14 +40,4 @@ public class ProductService {
     public ProductEntity findById(int id) {
         return productDao.viewProduct(id);
     }
-
-//    public List<ProductEntity> searchVisitByDentistName (String dentistName) {
-//        return productDao.searchVisitByDentistName(dentistName);
-//    }
-
-/*    public List<ProductEntity> getDentistList () {
-        return productDao.getAllProducts();
-    }
-    */
-
 }
