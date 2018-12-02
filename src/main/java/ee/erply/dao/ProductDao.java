@@ -43,7 +43,6 @@ public class ProductDao {
                 "SET name='" + name+"', price='"+ price
                 +"', updatedAt = NOW() WHERE id=" + id;
         entityManager.createQuery(updateQuery).executeUpdate();
-
     }
 
     public void deleteProduct(int id) {

@@ -27,13 +27,8 @@ public class ProductController extends WebMvcConfigurerAdapter {
     @Autowired
     private ProductService productService;
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/results").setViewName("results");
-    }
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<ProductEntity>> all() {
+    public ResponseEntity<List<ProductEntity>> allProducts() {
 
         List<ProductEntity> products = productService.getAllProducts();
 
@@ -41,7 +36,7 @@ public class ProductController extends WebMvcConfigurerAdapter {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductEntity> findById(@PathVariable("id") Integer id) {
+    public ResponseEntity<ProductEntity> findProductById(@PathVariable("id") Integer id) {
 
         ProductEntity productFound = productService.findById(id);
         if (productFound == null) {
@@ -62,7 +57,6 @@ public class ProductController extends WebMvcConfigurerAdapter {
     @PutMapping("/{id}")
     public ResponseEntity<ProductEntity> updateProduct(@PathVariable Integer id, @RequestBody ProductEntity productEntity){
         productService.updateProduct(productEntity, id);
-        System.out.println(id);
 
         return new ResponseEntity<>(productEntity, HttpStatus.OK);
     }
