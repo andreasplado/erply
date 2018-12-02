@@ -12,7 +12,7 @@ To deploy this serverside app locally you need maven.
 mvn spring-boot:run
 ```
 
-## Clientside application:
+## Clientside application
 
 Application is uploaded to 000wehost server located in this address:
 https://erply-frontend-test.000webhostapp.com/shop.html
