@@ -4,16 +4,14 @@ import javax.validation.constraints.Size;
 
 public class ProductDTO {
 
-    @Size(min = 1, max = 50)
     String name;
 
-    @Size(min = 16, max = 16, message = "Kuupäev peab olema 16 tähemärki pikk")
-    Long price;
+    double price;
 
     public ProductDTO() {
     }
 
-    public ProductDTO(String name, Long price) {
+    public ProductDTO(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -26,7 +24,7 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public Long getPrice() {
+    public double getPrice() {
         return price;
     }
 

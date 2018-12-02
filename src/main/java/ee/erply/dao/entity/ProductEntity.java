@@ -22,7 +22,7 @@ public class ProductEntity {
     private String name;
 
     @Column(name = "price")
-    private Long price;
+    private double price;
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -34,7 +34,7 @@ public class ProductEntity {
 
     }
 
-    public ProductEntity(String name, Long price) {
+    public ProductEntity(String name, double price) {
         this.setName(name);
         this.setPrice(price);
         this.setCreatedAt(new Date());
@@ -56,11 +56,8 @@ public class ProductEntity {
         this.name = name;
     }
 
-    public Long getPrice() {
-        return price;
-    }
 
-    public void setPrice(Long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -94,5 +91,9 @@ public class ProductEntity {
     @PreRemove
     protected void preRemove() {
         this.updatedAt = new Date();
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

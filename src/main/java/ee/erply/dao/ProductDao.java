@@ -36,7 +36,7 @@ public class ProductDao {
 
     public void updateProduct(ProductEntity product, int id) {
         String name= product.getName();
-        Long price = product.getPrice();
+        double price = product.getPrice();
         DateTime date = new DateTime();
 
         String updateQuery = "UPDATE ProductEntity " +
