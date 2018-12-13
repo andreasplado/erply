@@ -29,8 +29,8 @@ public class ProductDao {
     }
 
     public ProductEntity viewProduct(int id){
-        String selectQuery = "SELECT e FROM ProductEntity e WHERE id=" + id;
-        ProductEntity singleResult = (ProductEntity) entityManager.createQuery(selectQuery).getSingleResult();
+        String selectQuery = "SELECT e FROM ProductEntity e WHERE id=:id";
+        ProductEntity singleResult = (ProductEntity) entityManager.createQuery(selectQuery)..setParameter("id", id).getSingleResult();
         return  singleResult;
     }
 
@@ -41,13 +41,13 @@ public class ProductDao {
 
         String updateQuery = "UPDATE ProductEntity " +
                 "SET name='" + name+"', price='"+ price
-                +"', updatedAt = NOW() WHERE id=" + id;
-        entityManager.createQuery(updateQuery).executeUpdate();
+                +"', updatedAt = NOW() WHERE id= :id";
+        entityManager.createQuery(updateQuery).setParameter("id", id).executeUpdate();
     }
 
     public void deleteProduct(int id) {
-        String selectQuery = "SELECT e FROM ProductEntity e WHERE id=" + id;
-        List<ProductEntity> allProductsToRemove = entityManager.createQuery(selectQuery).getResultList();
+        String selectQuery = "SELECT e FROM ProductEntity e WHERE id= :id";
+        List<ProductEntity> allProductsToRemove = entityManager.createQuery(selectQuery).setParameter("id", id).getResultList();
         for (ProductEntity m: allProductsToRemove) {
             entityManager.remove(m);
         }
