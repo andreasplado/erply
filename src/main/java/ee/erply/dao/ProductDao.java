@@ -30,7 +30,7 @@ public class ProductDao {
 
     public ProductEntity viewProduct(int id){
         String selectQuery = "SELECT e FROM ProductEntity e WHERE id=:id";
-        ProductEntity singleResult = (ProductEntity) entityManager.createQuery(selectQuery)..setParameter("id", id).getSingleResult();
+        ProductEntity singleResult = (ProductEntity) entityManager.createQuery(selectQuery).setParameter("id", id).getSingleResult();
         return  singleResult;
     }
 
